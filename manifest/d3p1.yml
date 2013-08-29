@@ -1,0 +1,15 @@
+oss:
+ zombie:
+  - name: d2p3tlm-mgmt-pxe-a
+    template: CentOS_T 
+    ip: 10.6.28.201
+    netmask: 255.255.255.0
+    gateway: 10.6.28.1
+     
+tlm:
+ pubnetsvcs:
+  - name: d2p3tlm-mgmt-pxe-a
+    template: CentOS_T
+    ip: 10.6.28.202
+    netmask: 255.255.255.0
+    gateway: 10.6.28.1
