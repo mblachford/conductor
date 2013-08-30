@@ -3,7 +3,7 @@
 import src.util.vcenter as vcsa
 import src.util.mob as mob
 
-handle = vcsa.Transport('10.6.28.66','root','m0n3yb0vin3')
+handle = vcsa.Transport('','','')
 vms = mob.poll_all_vms(handle.client)
 
 for each in vms:
