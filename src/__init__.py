@@ -9,10 +9,3 @@ logging.basicConfig(filename=logfile,
                     format="%(asctime)s %(levelname)s %(name)s - %(message)s",
                     datefmt='%H:%M:%S',
                     level=logging.INFO)
-
-#rootlogger = logging.getLogger()
-#loghdlr = logging.FileHandler(logfile)
-#time_formatter = logging.Formatter("%(asctime)s %(levelname)s %(name)s - %(message)s")
-#loghdlr.setFormatter(time_formatter)
-#rootlogger.addHandler(loghdlr) 
-#rootlogger.setLevel(logging.INFO)
