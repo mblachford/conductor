@@ -1,3 +1,1187 @@
-2013-08-29 07:21:39,375 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
-2013-08-29 07:21:53,938 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
-2013-08-29 07:22:51,863 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+11:51:11 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+11:51:15 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+11:51:19 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+11:53:02 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+11:53:06 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+11:53:10 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+11:53:27 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+11:53:32 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+11:53:36 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+11:53:36 INFO src.util.vcenter - Closing connection to vCenter
+12:06:19 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+12:06:25 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+12:06:51 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+12:06:56 INFO src.util.parser - Parsing /home/masonb/conductor/manifest/d3p1.yml and building data tree
+12:06:56 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+12:07:30 INFO src.util.vcenter - Connection to vCenter 10.6.28.66 failed. Reason: The read operation timed out
+12:07:30 INFO src.util.vcenter - Closing connection to vCenter
+12:07:30 INFO src.util.vcenter - Failed to gracefully close the connection to vCenter. Reason: 'NoneType' object has no attribute 'logout'
+12:53:39 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+12:53:39 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+12:53:43 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+12:56:18 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+12:56:39 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+12:57:15 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+12:57:15 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+12:57:19 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+12:57:19 INFO src.util.vcenter - Closing connection to vCenter
+20:25:46 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:25:46 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:25:50 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:26:58 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:26:58 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:27:02 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:27:02 INFO src.util.vcenter - Closing connection to vCenter
+20:27:19 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:27:19 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:27:23 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:27:23 INFO src.util.vcenter - Closing connection to vCenter
+20:27:55 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:27:55 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:27:59 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:27:59 INFO src.util.vcenter - Closing connection to vCenter
+20:28:59 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:28:59 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:29:03 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:33:53 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:33:53 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:33:57 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:34:23 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:34:41 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:34:41 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:34:45 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:35:12 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:35:12 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:35:16 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:35:16 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:35:16 INFO src.util.mob - Polling VM objects from vCenter failed. Reason: get() takes exactly 2 arguments (3 given)
+20:35:16 INFO src.util.vcenter - Closing connection to vCenter
+20:36:01 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:36:01 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:36:05 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:36:05 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:36:05 INFO src.util.mob - Polling VM objects from vCenter failed. Reason: Transport instance has no attribute 'find_entity_view'
+20:36:05 INFO src.util.vcenter - Closing connection to vCenter
+20:36:39 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:36:39 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:36:42 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:36:42 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:36:42 INFO src.util.mob - Polling VM objects from vCenter failed. Reason: Transport instance has no attribute 'find_entity_view'
+20:36:42 INFO src.util.vcenter - Closing connection to vCenter
+20:37:25 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:37:25 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:37:29 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:37:29 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:37:29 INFO src.util.mob - Polling VM objects from vCenter failed. Reason: Transport instance has no attribute 'find_entity_view'
+20:37:29 INFO src.util.vcenter - Closing connection to vCenter
+20:39:57 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:39:57 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:40:01 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:40:01 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:40:01 INFO src.util.mob - Polling VM objects from vCenter failed. Reason: Transport instance has no attribute 'find_entity_view'
+20:40:01 INFO src.util.vcenter - Closing connection to vCenter
+20:40:01 INFO src.util.vcenter - Failed to gracefully close the connection to vCenter. Reason: 'NoneType' object has no attribute 'logout'
+20:41:10 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:41:10 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:41:14 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:41:14 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:41:14 INFO src.util.mob - Polling VM objects from vCenter failed. Reason: Transport instance has no attribute 'find_entity_view'
+20:41:14 INFO src.util.vcenter - Closing connection to vCenter
+20:41:14 INFO src.util.vcenter - Failed to gracefully close the connection to vCenter. Reason: 'NoneType' object has no attribute 'logout'
+20:41:43 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:41:43 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:41:47 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:41:47 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:41:47 INFO src.util.mob - Polling VM objects from vCenter failed. Reason: Transport instance has no attribute 'find_entity_view'
+20:41:47 INFO src.util.vcenter - Closing connection to vCenter
+20:41:47 INFO src.util.vcenter - Failed to gracefully close the connection to vCenter. Reason: 'NoneType' object has no attribute 'logout'
+20:41:57 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:41:57 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:42:01 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:42:01 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:42:01 INFO src.util.mob - Polling VM objects from vCenter failed. Reason: Transport instance has no attribute 'find_entity_view'
+20:42:01 INFO src.util.vcenter - Closing connection to vCenter
+20:42:01 INFO src.util.vcenter - Failed to gracefully close the connection to vCenter. Reason: 'NoneType' object has no attribute 'logout'
+20:42:19 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:42:19 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:42:23 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:42:23 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:42:23 INFO src.util.mob - Polling VM objects from vCenter failed. Reason: Transport instance has no attribute 'find_entity_view'
+20:42:23 INFO src.util.vcenter - Closing connection to vCenter
+20:42:55 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:42:55 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:42:58 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:42:58 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:42:58 WARNING psphere.client - No filter specified, returning first match.
+20:42:58 INFO src.util.vcenter - Closing connection to vCenter
+20:43:46 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:43:46 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:43:50 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:43:50 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO psphere - Updating view data for object of type VirtualMachine
+20:43:50 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:43:50 INFO psphere - Setting value of a single-valued property
+20:43:50 INFO src.util.vcenter - Closing connection to vCenter
+20:44:36 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:44:36 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:44:40 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:44:40 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO psphere - Updating view data for object of type VirtualMachine
+20:44:40 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:44:40 INFO psphere - Setting value of a single-valued property
+20:44:40 INFO src.util.vcenter - Closing connection to vCenter
+20:44:58 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:44:58 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:45:02 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:45:02 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:02 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:02 INFO psphere - Setting value of a single-valued property
+20:45:02 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:03 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:03 INFO psphere - Setting value of a single-valued property
+20:45:03 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:03 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:03 INFO psphere - Setting value of a single-valued property
+20:45:03 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:03 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:03 INFO psphere - Setting value of a single-valued property
+20:45:03 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:03 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:03 INFO psphere - Setting value of a single-valued property
+20:45:03 INFO src.util.vcenter - Closing connection to vCenter
+20:45:14 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:45:14 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:45:18 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:45:18 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:18 INFO psphere - Setting value of a single-valued property
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO psphere - Found cached value for name
+20:45:18 INFO src.util.vcenter - Closing connection to vCenter
+20:45:42 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:45:42 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:45:46 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:45:46 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO psphere - Updating view data for object of type VirtualMachine
+20:45:46 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:45:46 INFO psphere - Setting value of a single-valued property
+20:45:46 INFO src.util.vcenter - Closing connection to vCenter
+20:46:31 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:46:31 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:46:35 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:46:35 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:35 INFO psphere - Setting value of a single-valued property
+20:46:35 INFO psphere - summary is not cached.
+20:46:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO psphere - summary is not cached.
+20:46:36 INFO psphere - Updating view data for object of type VirtualMachine
+20:46:36 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:46:36 INFO psphere - Setting value of a single-valued property
+20:46:36 INFO src.util.vcenter - Closing connection to vCenter
+20:49:04 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:49:04 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:49:07 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:49:07 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:07 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:07 INFO psphere - Setting value of a single-valued property
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:07 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:07 INFO psphere - Setting value of a single-valued property
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:07 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:07 INFO psphere - Setting value of a single-valued property
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:07 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:07 INFO psphere - Setting value of a single-valued property
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:07 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:07 INFO psphere - Setting value of a single-valued property
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:07 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:07 INFO psphere - Setting value of a single-valued property
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:07 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:07 INFO psphere - Setting value of a single-valued property
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:07 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:07 INFO psphere - Setting value of a single-valued property
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:07 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:07 INFO psphere - Setting value of a single-valued property
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:07 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:07 INFO psphere - Setting value of a single-valued property
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:07 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:07 INFO psphere - Setting value of a single-valued property
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:07 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:07 INFO psphere - Setting value of a single-valued property
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:07 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:07 INFO psphere - Setting value of a single-valued property
+20:49:07 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:08 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:08 INFO psphere - Setting value of a single-valued property
+20:49:08 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:08 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:08 INFO psphere - Setting value of a single-valued property
+20:49:08 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:08 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:08 INFO psphere - Setting value of a single-valued property
+20:49:08 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:08 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:08 INFO psphere - Setting value of a single-valued property
+20:49:08 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:08 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:08 INFO psphere - Setting value of a single-valued property
+20:49:08 INFO psphere - Found cached value for name
+20:49:08 INFO psphere - summary is not cached.
+20:49:08 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:08 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:08 INFO psphere - Setting value of a single-valued property
+20:49:11 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:49:11 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:49:19 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:49:19 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:49:23 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:49:23 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Found cached value for name
+20:49:23 INFO psphere - summary is not cached.
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Found cached value for name
+20:49:23 INFO psphere - summary is not cached.
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Found cached value for name
+20:49:23 INFO psphere - summary is not cached.
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Found cached value for name
+20:49:23 INFO psphere - summary is not cached.
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Found cached value for name
+20:49:23 INFO psphere - summary is not cached.
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Found cached value for name
+20:49:23 INFO psphere - summary is not cached.
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Found cached value for name
+20:49:23 INFO psphere - summary is not cached.
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:23 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:23 INFO psphere - Setting value of a single-valued property
+20:49:23 INFO psphere - Found cached value for name
+20:49:23 INFO psphere - summary is not cached.
+20:49:23 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:24 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:24 INFO psphere - Setting value of a single-valued property
+20:49:24 INFO psphere - Found cached value for name
+20:49:24 INFO psphere - summary is not cached.
+20:49:24 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:24 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:24 INFO psphere - Setting value of a single-valued property
+20:49:24 INFO psphere - Found cached value for name
+20:49:24 INFO psphere - summary is not cached.
+20:49:24 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:24 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:24 INFO psphere - Setting value of a single-valued property
+20:49:24 INFO psphere - Found cached value for name
+20:49:24 INFO psphere - summary is not cached.
+20:49:24 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:24 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:24 INFO psphere - Setting value of a single-valued property
+20:49:24 INFO psphere - Found cached value for name
+20:49:24 INFO psphere - summary is not cached.
+20:49:24 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:24 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:24 INFO psphere - Setting value of a single-valued property
+20:49:24 INFO psphere - Found cached value for name
+20:49:24 INFO psphere - summary is not cached.
+20:49:24 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:24 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:24 INFO psphere - Setting value of a single-valued property
+20:49:24 INFO psphere - Found cached value for name
+20:49:24 INFO psphere - summary is not cached.
+20:49:24 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:24 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:24 INFO psphere - Setting value of a single-valued property
+20:49:24 INFO psphere - Found cached value for name
+20:49:24 INFO psphere - summary is not cached.
+20:49:24 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:24 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:24 INFO psphere - Setting value of a single-valued property
+20:49:24 INFO psphere - Found cached value for name
+20:49:24 INFO psphere - summary is not cached.
+20:49:24 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:24 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:24 INFO psphere - Setting value of a single-valued property
+20:49:24 INFO psphere - Found cached value for name
+20:49:24 INFO psphere - summary is not cached.
+20:49:24 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:24 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:24 INFO psphere - Setting value of a single-valued property
+20:49:24 INFO psphere - Found cached value for name
+20:49:24 INFO psphere - summary is not cached.
+20:49:24 INFO psphere - Updating view data for object of type VirtualMachine
+20:49:24 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:49:24 INFO psphere - Setting value of a single-valued property
+20:51:14 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:51:14 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:51:18 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:51:18 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:18 INFO psphere - Setting value of a single-valued property
+20:51:18 INFO src.util.mob - Polling VM objects from vCenter failed. Reason: 'list' object has no attribute 'preload'
+20:51:28 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:51:28 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:51:32 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:51:32 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO psphere - Updating view data for object of type VirtualMachine
+20:51:32 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:51:32 INFO psphere - Setting value of a single-valued property
+20:51:32 INFO src.util.mob - Polling VM objects from vCenter failed. Reason: 'list' object has no attribute 'preload'
+20:52:30 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:52:30 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:52:33 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:52:33 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Found cached value for name
+20:52:34 INFO psphere - summary is not cached.
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Found cached value for name
+20:52:34 INFO psphere - summary is not cached.
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Found cached value for name
+20:52:34 INFO psphere - summary is not cached.
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Found cached value for name
+20:52:34 INFO psphere - summary is not cached.
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Found cached value for name
+20:52:34 INFO psphere - summary is not cached.
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Found cached value for name
+20:52:34 INFO psphere - summary is not cached.
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Found cached value for name
+20:52:34 INFO psphere - summary is not cached.
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Found cached value for name
+20:52:34 INFO psphere - summary is not cached.
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Found cached value for name
+20:52:34 INFO psphere - summary is not cached.
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:34 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:34 INFO psphere - Setting value of a single-valued property
+20:52:34 INFO psphere - Found cached value for name
+20:52:34 INFO psphere - summary is not cached.
+20:52:34 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:35 INFO psphere - Setting value of a single-valued property
+20:52:35 INFO psphere - Found cached value for name
+20:52:35 INFO psphere - summary is not cached.
+20:52:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:35 INFO psphere - Setting value of a single-valued property
+20:52:35 INFO psphere - Found cached value for name
+20:52:35 INFO psphere - summary is not cached.
+20:52:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:35 INFO psphere - Setting value of a single-valued property
+20:52:35 INFO psphere - Found cached value for name
+20:52:35 INFO psphere - summary is not cached.
+20:52:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:35 INFO psphere - Setting value of a single-valued property
+20:52:35 INFO psphere - Found cached value for name
+20:52:35 INFO psphere - summary is not cached.
+20:52:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:35 INFO psphere - Setting value of a single-valued property
+20:52:35 INFO psphere - Found cached value for name
+20:52:35 INFO psphere - summary is not cached.
+20:52:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:35 INFO psphere - Setting value of a single-valued property
+20:52:35 INFO psphere - Found cached value for name
+20:52:35 INFO psphere - summary is not cached.
+20:52:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:35 INFO psphere - Setting value of a single-valued property
+20:52:35 INFO psphere - Found cached value for name
+20:52:35 INFO psphere - summary is not cached.
+20:52:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:35 INFO psphere - Setting value of a single-valued property
+20:52:35 INFO psphere - Found cached value for name
+20:52:35 INFO psphere - summary is not cached.
+20:52:35 INFO psphere - Updating view data for object of type VirtualMachine
+20:52:35 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:52:35 INFO psphere - Setting value of a single-valued property
+20:53:13 WARNING psphere.config - Configuration file /root/.psphere/config.yaml could not be opened, perhaps you haven't created one?
+20:53:13 INFO src.util.vcenter - Attempting to connect to vCenter 10.6.28.66
+20:53:17 INFO src.util.vcenter - Connected to vCenter 10.6.28.66
+20:53:17 INFO src.util.mob - Attempting to poll all virtual machine objects
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Found cached value for name
+20:53:17 INFO psphere - summary is not cached.
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Found cached value for name
+20:53:17 INFO psphere - summary is not cached.
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Found cached value for name
+20:53:17 INFO psphere - summary is not cached.
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Found cached value for name
+20:53:17 INFO psphere - summary is not cached.
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Found cached value for name
+20:53:17 INFO psphere - summary is not cached.
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Found cached value for name
+20:53:17 INFO psphere - summary is not cached.
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Found cached value for name
+20:53:17 INFO psphere - summary is not cached.
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:17 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:17 INFO psphere - Setting value of a single-valued property
+20:53:17 INFO psphere - Found cached value for name
+20:53:17 INFO psphere - summary is not cached.
+20:53:17 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:18 INFO psphere - Setting value of a single-valued property
+20:53:18 INFO psphere - Found cached value for name
+20:53:18 INFO psphere - summary is not cached.
+20:53:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:18 INFO psphere - Setting value of a single-valued property
+20:53:18 INFO psphere - Found cached value for name
+20:53:18 INFO psphere - summary is not cached.
+20:53:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:18 INFO psphere - Setting value of a single-valued property
+20:53:18 INFO psphere - Found cached value for name
+20:53:18 INFO psphere - summary is not cached.
+20:53:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:18 INFO psphere - Setting value of a single-valued property
+20:53:18 INFO psphere - Found cached value for name
+20:53:18 INFO psphere - summary is not cached.
+20:53:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:18 INFO psphere - Setting value of a single-valued property
+20:53:18 INFO psphere - Found cached value for name
+20:53:18 INFO psphere - summary is not cached.
+20:53:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:18 INFO psphere - Setting value of a single-valued property
+20:53:18 INFO psphere - Found cached value for name
+20:53:18 INFO psphere - summary is not cached.
+20:53:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:18 INFO psphere - Setting value of a single-valued property
+20:53:18 INFO psphere - Found cached value for name
+20:53:18 INFO psphere - summary is not cached.
+20:53:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:18 INFO psphere - Setting value of a single-valued property
+20:53:18 INFO psphere - Found cached value for name
+20:53:18 INFO psphere - summary is not cached.
+20:53:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:18 INFO psphere - Setting value of a single-valued property
+20:53:18 INFO psphere - Found cached value for name
+20:53:18 INFO psphere - summary is not cached.
+20:53:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:18 INFO psphere - Setting value of a single-valued property
+20:53:18 INFO psphere - Found cached value for name
+20:53:18 INFO psphere - summary is not cached.
+20:53:18 INFO psphere - Updating view data for object of type VirtualMachine
+20:53:18 INFO psphere - Setting view data for a <class 'psphere.managedobjects.VirtualMachine'>
+20:53:18 INFO psphere - Setting value of a single-valued property

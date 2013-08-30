@@ -1,30 +1,36 @@
-#!/usr/bin/env python
+#!bin/python -B
 
 '''
 conductor 0.0.1
 author: Mason Blachford
 email: masonb@vmware.com
-License: GPL
+License: GPLv2
 '''
+
 import os
 import sys
-import logger
 import psphere
 import getpass
 import argparse
-import logging
 import src.util.vcenter as vcsa
 import src.util.parser as data_parser
 
-def ParseData(input):
+
+def Parse(input):
     '''parse data provided and return values'''
     data = data_parser.parse(input)
+    return data
 
+def Compare(input):
+    '''compare data provided and return values'''
+    data = data_parser.parse(input)
+    return data
 
-
-
-
-
+def Connect(target,username,password):
+    '''connect to vcenter'''
+    handle = vcsa.Transport(target,username,password)
+    return handle
+    
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
@@ -34,7 +40,8 @@ if __name__=='__main__':
     parser.add_argument('-c', action='store', dest='component', choices=['zombie', 'vshield', 'netsvcs'], \
                         help='yaml configuration file to pull data from', required=True)
     args = parser.parse_args()
-
     passwd=getpass.getpass("password for {} on {}:".format(args.username,args.target))
 
-    #ParseData(args.filename)
+    yaml_file = Parse(args.filename)
+    vcsa_cursor = Connect(args.target,args.username,passwd)
+    vcsa_cursor.disconnect()
