@@ -3,11 +3,12 @@
 import src.util.vcenter as vcsa
 import src.util.mob as mob
 
-handle = vcsa.Transport('','','')
-vms = mob.poll_all_vms(handle.client)
+handle = vcsa.Transport('10.6.28.66','root','m0n3yb0vin3')
+#vms = mob.poll_all_vms(handle.client)
+esx = mob.get_esx_env(handle.client)
 
-for each in vms:
-    print each.name,each.summary.guest.ipAddress
+print esx
+
 
 
 handle.disconnect()
