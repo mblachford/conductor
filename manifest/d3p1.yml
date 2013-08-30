@@ -16,36 +16,3 @@ tlm:
     ip: 10.6.28.202
     netmask: 255.255.255.0
     gateway: 10.6.28.1
-
-
-
-
-
-
-uest = 
-      (VirtualMachineGuestSummary){
-         guestId = "windows7Server64Guest"
-         guestFullName = "Microsoft Windows Server 2008 R2 (64-bit)"
-         toolsStatus = "toolsOk"
-         toolsVersionStatus = "guestToolsCurrent"
-         toolsRunningStatus = "guestToolsRunning"
-         hostName = "d2p3oss-mgmt-wi"
-         ipAddress = "172.20.3.2"
-      }
-   config = 
-      (VirtualMachineConfigSummary){
-         name = "d2p3oss-mgmt-winjump"
-         template = False
-         vmPathName = "[d2p3s1vnx0oss-lun4] d2p3oss-mgmt-winjump/d2p3oss-mgmt-winjump.vmx"
-         memorySizeMB = 16384
-         cpuReservation = 0
-         memoryReservation = 0
-         numCpu = 4
-         numEthernetCards = 1
-         numVirtualDisks = 1
-         uuid = "4234dd60-5019-093a-6a65-e957ea5ba42c"
-         instanceUuid = "50347a03-88f3-fb4e-8054-21efeb424852"
-         guestId = "windows7Server64Guest"
-         guestFullName = "Microsoft Windows Server 2008 R2 (64-bit)"
-         annotation = None
-

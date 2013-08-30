@@ -11,3 +11,7 @@ def parse(input):
         return value
     except Exception, e:
         log.info("Unable to parse {} and build the data tree".format(input))
+
+def compare(input):
+    '''this is where we compare and build mapping values to put back into vCenter'''
+    print input

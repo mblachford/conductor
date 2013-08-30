@@ -14,6 +14,7 @@ import getpass
 import argparse
 import src.util.vcenter as vcsa
 import src.util.parser as data_parser
+import src.util.mob as mob
 
 
 def Parse(input):
@@ -23,7 +24,7 @@ def Parse(input):
 
 def Compare(input):
     '''compare data provided and return values'''
-    data = data_parser.parse(input)
+    data = data_parser.compare(input)
     return data
 
 def Connect(target,username,password):
@@ -42,6 +43,23 @@ if __name__=='__main__':
     args = parser.parse_args()
     passwd=getpass.getpass("password for {} on {}:".format(args.username,args.target))
 
-    yaml_file = Parse(args.filename)
+    raw_data = {}
+    #connect to vcsa
     vcsa_cursor = Connect(args.target,args.username,passwd)
+
+    #pull esxi data
+    esx_info = mob.get_esx_env(vcsa_cursor.client)
+    raw_data['esx_info'] = esx_info
+
+    #pull vm data
+    vm_info = mob.poll_all_vms(vcsa_cursor.client)
+    raw_data['vm_info'] = vm_info
+
+    #ingest local data
+    yaml_file = Parse(args.filename)
+    raw_data['yaml_file'] = yaml_file
+
+    to_add = Compare(raw_data)
+
+    #disconnect from vcsa
     vcsa_cursor.disconnect()
