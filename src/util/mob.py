@@ -29,7 +29,16 @@ def poll_all_vms(cursor):
     try:
         log.info("Attempting to poll all virtual machine objects")
         data = vcsa_objects.VirtualMachine.all(cursor)
-        return data
+        vm_data = []
+        for each in data:
+            vms_data = {}
+            try:
+                vms_data['name'] = each.name
+                vms_data['ip'] = each.summary.guest.ipAddress
+            except AttributeError:
+                pass
+            vm_data.append(vms_data)
+        return vm_data
     except Exception, e:
         log.info("Polling VM objects from vCenter failed. Reason: {}".format(e))
 
@@ -38,7 +47,6 @@ def poll_single_vm(cursor,vmname):
     try:
         log.info("Attempting to poll vCenter for virtual machine object: {}".format(vmname))
         data = vcsa_objects.VirtualMachine.get(cursor, name='{}'.format(vmname))
-        print data
         return data
     except Exception, e:
         log.info("Polling for virtual machine object {} failed. Reason: {}".format(vmname,e))

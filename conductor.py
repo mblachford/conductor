@@ -17,9 +17,9 @@ import src.util.parser as data_parser
 import src.util.mob as mob
 
 
-def Parse(input):
+def Parse(input,env):
     '''parse data provided and return values'''
-    data = data_parser.parse(input)
+    data = data_parser.parse(input,env)
     return data
 
 def Compare(input):
@@ -49,15 +49,15 @@ if __name__=='__main__':
 
     #pull esxi data
     esx_info = mob.get_esx_env(vcsa_cursor.client)
-    raw_data['esx_info'] = esx_info
+    raw_data['ESX_INFO'] = esx_info
 
     #pull vm data
     vm_info = mob.poll_all_vms(vcsa_cursor.client)
-    raw_data['vm_info'] = vm_info
+    raw_data['VM_INFO'] = vm_info
 
     #ingest local data
-    yaml_file = Parse(args.filename)
-    raw_data['yaml_file'] = yaml_file
+    yaml_file = Parse(args.filename,args.component)
+    raw_data['YAML_FILE'] = yaml_file
 
     to_add = Compare(raw_data)
 

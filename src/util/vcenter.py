@@ -19,6 +19,7 @@ class Transport():
             return client
         except Exception, e:
             log.info("Connection to vCenter {} failed. Reason: {}".format(target,e))
+            sys.exit(1)
 
     def disconnect(self):
         ''' close connection to target instance '''
