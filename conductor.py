@@ -41,25 +41,40 @@ if __name__=='__main__':
     parser.add_argument('-c', action='store', dest='component', choices=['zombie', 'vshield', 'netsvcs'], \
                         help='yaml configuration file to pull data from', required=True)
     args = parser.parse_args()
-    passwd=getpass.getpass("password for {} on {}:".format(args.username,args.target))
+    passwd=getpass.getpass("Password for {} on {}:".format(args.username,args.target))
+    print "\nStarting configuration pass on {}. Output logged to ~/log/conductor.log\n".format(args.target)
 
-    raw_data = {}
-    #connect to vcsa
     vcsa_cursor = Connect(args.target,args.username,passwd)
 
-    #pull esxi data
+    global_data = {}
+    esx_data = []
     esx_info = mob.get_esx_env(vcsa_cursor.client)
-    raw_data['ESX_INFO'] = esx_info
-
-    #pull vm data
+    for each in esx_info:
+        if isinstance(each, dict):
+            try:
+                if isinstance(each['datastores'], list):
+                    esx_data.append("{},{}".format(each['host'],','.join(each['datastores'])))
+            except:
+                pass
+        else:
+            esxl_data.append("{},{}".format(each['host'],each['datastores']))
+    global_data['ESX'] = esx_data
+            
+        
+    vm_data = []
     vm_info = mob.poll_all_vms(vcsa_cursor.client)
-    raw_data['VM_INFO'] = vm_info
+    for each in vm_info:
+        if isinstance(each, dict):
+            try:
+                vm_data.append("{},{}".format(each['name'],each['ip']))
+            except:
+                pass
+        else:
+            vm_data.append("{},{}".format(each['name'],each['ip']))
+    global_data['VM'] = vm_data
 
-    #ingest local data
     yaml_file = Parse(args.filename,args.component)
-    raw_data['YAML_FILE'] = yaml_file
+    global_data['YAML'] = yaml_file
 
-    to_add = Compare(raw_data)
-
-    #disconnect from vcsa
+    to_add = Compare(global_data)
     vcsa_cursor.disconnect()

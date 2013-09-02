@@ -7,6 +7,15 @@ zombie:
     memory: 2048
     cpus: 2
     cores: 2
+
+  - name: d2p3tlm-mgmt-pxe-b
+    template: Centos6.4-2013-08-24
+    ip: 10.6.28.202
+    netmask: 255.255.255.0
+    gateway: 10.6.28.1
+    memory: 2048
+    cpus: 2
+    cores: 2
      
 pubnetsvcs:
   - name: d2p3tlm-mgmt-pxe-a
