@@ -1,5 +1,6 @@
 import logging
 import yaml
+from random import choice
 
 log = logging.getLogger(__name__)
 
@@ -19,39 +20,51 @@ def parse(input,*args):
         log.info("Unable to parse {} and build the data tree".format(input))
 
 def compare(input):
-    '''this is where we compare and build mapping values to put back into vCenter
-       We need 3 things:
-       vm info
-       yaml file
-       esx info
-    '''
+    '''this is where we compare and build mapping values to put back into vCenter'''
 
     yaml_data = input['YAML']
     vm_data = input['VM']
     esx_data = input['ESX']
 
-    log.info("Comparing provided manifest to already installed virtual machines")
-    for values in vm_data:
-        host = values.split(',')[0]
-        ip = values.split(',')[1]
-        if HI == host and IP == ip:
-            log.error("Found an already existing virtual machine with the name {} and ip address {}. Skipping installation".format(host,ip))
-            break
-        elif HI == host and not IP == ip:
-            log.error("Found an already existing virtual machine with the name {} but an ip address of {}. Skipping installation".format(host,ip))
-            break
-        elif not HI == host and IP == ip:
-            log.error("Found an already existing virtual machine with the ip {} and a name of {}, not {} as specified in the yaml file. Skipping installation".format(ip,host,HI))
-            break
-        else:
-            if host == HI:
-                log.info("Unable to locate a virtual machine with the host name or {} or the ip address {}. Continuing installation".format(host,ip))
-            else:
-                pass
+    phys = choice(esx_data).split(',')
+    host = phys.pop(0)
+    datastore = choice(phys)
 
+    payload = []
+    while yaml_data:
+        _build = {}
+        in_data = yaml_data.pop(0)
+        _template = in_data['template']
+        _name = in_data['name']
+        _ip = in_data['ip']
+        _netmask = in_data['netmask']
+        _gateway = in_data['gateway']
+        _cores = in_data['cores']
+        _cpus = in_data['cpus']
+        _memory = in_data['memory']
+        _domain = in_data['domain']
+        _dns_srv = in_data['dns_servers']
 
+        log.info("Comparing provided manifest to already installed virtual machines for entry {}".format(_name))
 
-
-
-
-
+        for raw_data in vm_data:
+            if _name in raw_data and _ip in raw_data:
+                log.error("Found an already existing virtual machine with the name {} and ip address {}. Skipping installation".format(_name,_ip))
+                break
+            elif not _name in raw_data or not _ip in raw_data:
+                log.info("Unable to locate a VM in inventory with the name {} and an IP of {}. Safe to build. Generating payload for delivery".format(_name,_ip))
+                _build['vm_name'] = _name
+                _build['template'] = _template
+                _build['ip'] = _ip
+                _build['netmask'] = _netmask
+                _build['gateway'] = _gateway
+                _build['cores'] = _cores
+                _build['cpus'] = _cpus
+                _build['memory'] = _memory
+                _build['vm_name'] = _name
+                _build['esx_host'] = host
+                _build['datastore'] = datastore
+                _build['dns'] = _dns_srv
+                _build['domain'] = _domain
+        payload.append(_build)
+    return payload

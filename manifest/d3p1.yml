@@ -4,6 +4,8 @@ zombie:
     ip: 10.6.28.201
     netmask: 255.255.255.0
     gateway: 10.6.28.1
+    domain: prod.vchs.vmw
+    dns_servers: 10.2.80.2,10.2.80.3 
     memory: 2048
     cpus: 2
     cores: 2
@@ -13,6 +15,19 @@ zombie:
     ip: 10.6.28.202
     netmask: 255.255.255.0
     gateway: 10.6.28.1
+    domain: prod.vchs.vmw
+    dns_servers: 10.2.80.2,10.2.80.3 
+    memory: 2048
+    cpus: 2
+    cores: 2
+
+  - name: d2p3oss-mgmt-smarts-podsam
+    template: Centos6.4-2013-08-24
+    ip: 10.6.28.74
+    netmask: 255.255.255.0
+    gateway: 10.6.28.1
+    domain: prod.vchs.vmw
+    dns_servers: 10.2.80.2,10.2.80.3 
     memory: 2048
     cpus: 2
     cores: 2
@@ -23,6 +38,20 @@ pubnetsvcs:
     ip: 10.6.28.202
     netmask: 255.255.255.0
     gateway: 10.6.28.1
+    domain: prod.vchs.vmw
+    dns_servers: 10.2.80.2,10.2.80.3 
     memory: 2048
     cpus: 2
     cores: 2
+
+other:
+  - name: test_mason
+    template: Centos6.4-2013-08-24
+    ip: 10.6.28.100
+    netmask: 255.255.255.128
+    gateway: 10.6.28.65
+    domain: prod.vchs.vmw
+    dns_servers: 4.2.2.2 
+    memory: 1024
+    cpus: 2
+    cores: 1

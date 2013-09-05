@@ -38,11 +38,12 @@ if __name__=='__main__':
     parser.add_argument('-t', action='store', dest='target', help='vCenter IP address or name', required=True)
     parser.add_argument('-u', action='store', dest='username', help='username to connect to vCenter with', required=True)
     parser.add_argument('-f', action='store', dest='filename', help='yaml configuration file to pull data from', required=True)
-    parser.add_argument('-c', action='store', dest='component', choices=['zombie', 'vshield', 'netsvcs'], \
+    parser.add_argument('-c', action='store', dest='component', choices=['zombie', 'vshield', 'netsvcs', 'other'], \
                         help='yaml configuration file to pull data from', required=True)
     args = parser.parse_args()
-    passwd=getpass.getpass("Password for {} on {}:".format(args.username,args.target))
-    print "\nStarting configuration pass on {}. Output logged to ~/log/conductor.log\n".format(args.target)
+    #passwd=getpass.getpass("Password for {} on {}:".format(args.username,args.target))
+    #print "\nStarting configuration pass on {}. Output logged to ~/log/conductor.log\n".format(args.target)
+    passwd='m0n3yb0vin3'
 
     vcsa_cursor = Connect(args.target,args.username,passwd)
 
@@ -77,4 +78,6 @@ if __name__=='__main__':
     global_data['YAML'] = yaml_file
 
     to_add = Compare(global_data)
+    vcsa_cursor.clone(vcsa_cursor.client,to_add)
+    
     vcsa_cursor.disconnect()
