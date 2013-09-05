@@ -45,8 +45,8 @@ pubnetsvcs:
     cores: 2
 
 other:
-  - name: test_mason
-    template: Centos6.4-2013-08-24
+  - name: testone
+    template: mason_template
     ip: 10.6.28.100
     netmask: 255.255.255.128
     gateway: 10.6.28.65
@@ -54,4 +54,37 @@ other:
     dns_servers: 4.2.2.2 
     memory: 1024
     cpus: 2
+    cores: 1
+
+  - name: testtwo
+    template: mason_template
+    ip: 10.6.28.101
+    netmask: 255.255.255.128
+    gateway: 10.6.28.65
+    domain: prod.vchs.vmw
+    dns_servers: 4.2.2.2 
+    memory: 1024
+    cpus: 2
+    cores: 1
+
+  - name: testthree
+    template: mason_template
+    ip: 10.6.28.103
+    netmask: 255.255.255.128
+    gateway: 10.6.28.65
+    domain: prod.vchs.vmw
+    dns_servers: 4.2.2.2 
+    memory: 1024
+    cpus: 4
+    cores: 1
+
+  - name: testfour
+    template: mason_template
+    ip: 10.6.28.104
+    netmask: 255.255.255.128
+    gateway: 10.6.28.65
+    domain: prod.vchs.vmw
+    dns_servers: 4.2.2.2 
+    memory: 512
+    cpus: 1
     cores: 1

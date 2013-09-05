@@ -1,10 +1,12 @@
 import os
 import sys
+import time
 import logging
 import psphere.client as vcsa_client
 from psphere.managedobjects import VirtualMachine
 from psphere.managedobjects import HostSystem
 from psphere.managedobjects import ResourcePool
+from psphere.managedobjects import Task
 from psphere.soap import VimFault
 
 log = logging.getLogger(__name__)
@@ -49,18 +51,20 @@ class Transport():
                                                         cpus = data['cpus'], 
                                                         cores = data['cores'],
                                                         name = data['vm_name'])
-            #_ip_spec = self._vm_ip_spec(cursor, domain = data['domain'],
-            #                                    dns = data['dns'],
-            #                                    gateway = data['gateway'],
-            #                                    ip = data['ip'],
-            #                                    netmask = data['netmask'])
-            #_custom_spec = self._vm_custom_spec(cursor, _ip_spec)
+            _ip_spec = self._vm_ip_spec(cursor, domain = data['domain'],
+                                                dns = data['dns'],
+                                                gateway = data['gateway'],
+                                                ip = data['ip'],
+                                               netmask = data['netmask'])
+            _adapter_spec = self._vm_adapter_spec(cursor, _ip_spec)
+            _custom_spec = self._vm_custom_spec(cursor, _adapter_spec,
+                                                         domain = data['domain'],
+                                                         name = data['vm_name'])
             _relo_spec = self._vm_relo_spec(cursor, template.datastore, esxhost, pool)
-            #_clone_spec = self._vm_clone_spec(cursor, _relo_spec, _config_spec, _custom_spec)
-            _clone_spec = self._vm_clone_spec(cursor, _relo_spec)
+            _clone_spec = self._vm_clone_spec(cursor, _relo_spec, _config_spec, _custom_spec)
 
             try:
-                template.CloneVM_Task(folder = folder, name = data['vm_name'], spec=_clone_spec)
+                self.wait_for_task(template.CloneVM_Task(folder = folder, name = data['vm_name'], spec=_clone_spec))
             except VimFault, e:
                 print e
 
@@ -72,20 +76,34 @@ class Transport():
         #config_spec.numCoresPerSocket = kwargs['cores']
         return config_spec
 
-    def _vm_custom_spec(self,cursor,ipsettings):
-        custom_spec = cursor.create("CustomizationSpec")
-        custom_spec.nicSettingMap = ipsettings
-        return custom_spec
-
     def _vm_ip_spec(self,cursor,**kwargs):
         ip_spec = cursor.create("CustomizationIPSettings")
+        fixed_ip = cursor.create("CustomizationFixedIp")
+        fixed_ip.ipAddress = kwargs['ip']
         ip_spec.dnsDomain = kwargs['domain']
         ip_spec.dnsServerList = kwargs['dns']
         ip_spec.gateway = kwargs['gateway']
-        ip_spec.ip = kwargs['ip']
+        ip_spec.ip = fixed_ip
         ip_spec.subnetMask = kwargs['netmask']
         ip_spec.netBIOS = None
         return ip_spec
+
+    def _vm_adapter_spec(self,cursor,ip_spec):
+        nic_config = cursor.create("CustomizationAdapterMapping")
+        nic_config.adapter = ip_spec
+        return nic_config
+
+    def _vm_custom_spec(self,cursor,adapter_spec, **kwargs):
+        custom_spec = cursor.create("CustomizationSpec")
+        identity_spec = cursor.create("CustomizationLinuxPrep")
+        host_name = cursor.create("CustomizationFixedName")
+        host_name.name = kwargs['name']
+        identity_spec.domain = kwargs['domain']
+        identity_spec.hostName = host_name
+        identity_spec.hwClockUTC = True
+        custom_spec.nicSettingMap = adapter_spec
+        custom_spec.identity = identity_spec
+        return custom_spec
 
     def _vm_relo_spec(self,cursor,disk,esxhost,pool):
         relo_spec = cursor.create("VirtualMachineRelocateSpec")
@@ -95,13 +113,26 @@ class Transport():
         relo_spec.pool = pool
         return relo_spec
 
-    #def _vm_clone_spec(self,cursor,relo_spec, config_spec, custom_spec):
-    def _vm_clone_spec(self,cursor,relo_spec):
+    def _vm_clone_spec(self,cursor,relo_spec, config_spec, custom_spec):
         clone_spec = cursor.create("VirtualMachineCloneSpec")
         clone_spec.config = config_spec
-        clone_spec.customization = None
+        clone_spec.customization = custom_spec
         clone_spec.location = relo_spec
-        clone_spec.powerOn = False
+        clone_spec.powerOn = True
         clone_spec.snapshot = None
         clone_spec.template = False
         return clone_spec
+
+    def wait_for_task(self,task):
+        if isinstance(task, Task):
+            while task.info.state in ["queued", "running"]:
+                time.sleep(1)
+                task.update()
+            if task.info.state == "success":
+                return True
+            else:
+                log.warn("Task failed: {0}".format(task.info))
+                return False
+        else:
+            log.warning("Passed non task object into wait_for_task")
+            return False
