@@ -49,14 +49,15 @@ class Transport():
                                                         cpus = data['cpus'], 
                                                         cores = data['cores'],
                                                         name = data['vm_name'])
-            _ip_spec = self._vm_ip_spec(cursor, domain = data['domain'],
-                                                dns = data['dns'],
-                                                gateway = data['gateway'],
-                                                ip = data['ip'],
-                                                netmask = data['netmask'])
-            _custom_spec = self._vm_custom_spec(cursor, _ip_spec)
+            #_ip_spec = self._vm_ip_spec(cursor, domain = data['domain'],
+            #                                    dns = data['dns'],
+            #                                    gateway = data['gateway'],
+            #                                    ip = data['ip'],
+            #                                    netmask = data['netmask'])
+            #_custom_spec = self._vm_custom_spec(cursor, _ip_spec)
             _relo_spec = self._vm_relo_spec(cursor, template.datastore, esxhost, pool)
-            _clone_spec = self._vm_clone_spec(cursor, _relo_spec, _config_spec, _custom_spec)
+            #_clone_spec = self._vm_clone_spec(cursor, _relo_spec, _config_spec, _custom_spec)
+            _clone_spec = self._vm_clone_spec(cursor, _relo_spec)
 
             try:
                 template.CloneVM_Task(folder = folder, name = data['vm_name'], spec=_clone_spec)
@@ -94,10 +95,11 @@ class Transport():
         relo_spec.pool = pool
         return relo_spec
 
-    def _vm_clone_spec(self,cursor,relo_spec, config_spec, custom_spec):
+    #def _vm_clone_spec(self,cursor,relo_spec, config_spec, custom_spec):
+    def _vm_clone_spec(self,cursor,relo_spec):
         clone_spec = cursor.create("VirtualMachineCloneSpec")
         clone_spec.config = config_spec
-        clone_spec.customization = custom_spec
+        clone_spec.customization = None
         clone_spec.location = relo_spec
         clone_spec.powerOn = False
         clone_spec.snapshot = None
