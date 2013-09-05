@@ -39,20 +39,24 @@ class Transport():
    
         while payload:
             data = payload.pop(0)
-            template_name = data['template']
-            log.info("Building virtual machine named {} from template {}".format(data['vm_name'],template_name))
-            template = VirtualMachine.get(cursor, name=template_name)
+            log.info("Building virtual machine named {} from template {}".format(data['vm_name'],data['template']))
+            template = VirtualMachine.get(cursor, name=data['template'])
+            folder = template.parent.parent.parent.vmFolder
             esxhost = HostSystem.get(cursor, name=data['esx_host'])
-            #pool = ResourcePool.get(cursor)
-            pool = 'd2p3oss'
-            #folder = cursor.si.content.rootFolder
-            folder = 'Management'
+            pool = esxhost.parent.resourcePool
 
-            #_config_spec = self._vm_config_spec(cursor,memory = data['memory'], cpus = data['cpus'])
-           # _ip_spec = self._vm_ip_spec(cursor, domain = data['domain'], dns = data['dns'], gateway = data['gateway'], ip = data['ip'], netmask = data['netmask'])
-           # _custom_spec = self._vm_custom_spec(cursor, _ip_spec)
-            _relo_spec = self._vm_relo_spec(cursor, data['datastore'], esxhost.name, pool)
-            _clone_spec = self._vm_clone_spec(cursor, _relo_spec)
+            _config_spec = self._vm_config_spec(cursor, memory = data['memory'], 
+                                                        cpus = data['cpus'], 
+                                                        cores = data['cores'],
+                                                        name = data['vm_name'])
+            _ip_spec = self._vm_ip_spec(cursor, domain = data['domain'],
+                                                dns = data['dns'],
+                                                gateway = data['gateway'],
+                                                ip = data['ip'],
+                                                netmask = data['netmask'])
+            _custom_spec = self._vm_custom_spec(cursor, _ip_spec)
+            _relo_spec = self._vm_relo_spec(cursor, template.datastore, esxhost, pool)
+            _clone_spec = self._vm_clone_spec(cursor, _relo_spec, _config_spec, _custom_spec)
 
             try:
                 template.CloneVM_Task(folder = folder, name = data['vm_name'], spec=_clone_spec)
@@ -63,12 +67,13 @@ class Transport():
         config_spec = cursor.create("VirtualMachineConfigSpec")
         config_spec.memoryMB = kwargs['memory']
         config_spec.numCPUs = kwargs['cpus']
-        #config_spec.numCoresPerSocket = args['cores']
+        config_spec.name = kwargs['name']
+        #config_spec.numCoresPerSocket = kwargs['cores']
         return config_spec
 
     def _vm_custom_spec(self,cursor,ipsettings):
         custom_spec = cursor.create("CustomizationSpec")
-        custom_spec.globalIPSettings = ipsettings
+        custom_spec.nicSettingMap = ipsettings
         return custom_spec
 
     def _vm_ip_spec(self,cursor,**kwargs):
@@ -83,16 +88,16 @@ class Transport():
 
     def _vm_relo_spec(self,cursor,disk,esxhost,pool):
         relo_spec = cursor.create("VirtualMachineRelocateSpec")
-        #relo_spec.datastore = disk
-        #relo_spec.host = esxhost
-        relo_spec.transform = 'sparse'
+        relo_spec.datastore = disk
+        relo_spec.host = esxhost
+        relo_spec.transform = "sparse"
         relo_spec.pool = pool
         return relo_spec
 
-    def _vm_clone_spec(self,cursor,relo_spec):
+    def _vm_clone_spec(self,cursor,relo_spec, config_spec, custom_spec):
         clone_spec = cursor.create("VirtualMachineCloneSpec")
-        clone_spec.config = None
-        clone_spec.customization = None
+        clone_spec.config = config_spec
+        clone_spec.customization = custom_spec
         clone_spec.location = relo_spec
         clone_spec.powerOn = False
         clone_spec.snapshot = None
