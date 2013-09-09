@@ -12,14 +12,40 @@ import sys
 import psphere
 import getpass
 import argparse
+import zc.lockfile as locker
 import src.util.vcenter as vcsa
 import src.util.parser as data_parser
 import src.util.mob as mob
 
+class Lock:
 
-def Parse(input,env):
+    def __init__(self):
+        dirname = os.path.dirname(os.path.abspath(__file__))
+        fname = ".{}".format(__file__.lstrip('./'))
+        self.lfile = "{}/{}".format(dirname,fname)
+
+    def grab(self):
+        try:
+            locker.LockFile(self.lfile)
+        except locker.LockError, e:
+            print "unable to obtain exclusive lock. Reason: {}".format(e)
+            sys.exit(-1)
+        
+    def release(self):
+        try:
+            locker.LockFile.close(locker.LockFile(self.lfile))
+        except locker.LockError, e:
+            print "unable to gracefully release lock, forcing"
+        finally:
+            if os.path.exists(self.lfile):
+                os.remove(self.lfile)
+
+
+def Parse(input,**kwargs):
     '''parse data provided and return values'''
-    data = data_parser.parse(input,env)
+    root = kwargs['root']  
+    node = kwargs['node']
+    data = data_parser.parse(input,root,node)
     return data
 
 def Compare(input):
@@ -38,12 +64,15 @@ if __name__=='__main__':
     parser.add_argument('-t', action='store', dest='target', help='vCenter IP address or name', required=True)
     parser.add_argument('-u', action='store', dest='username', help='username to connect to vCenter with', required=True)
     parser.add_argument('-f', action='store', dest='filename', help='yaml configuration file to pull data from', required=True)
+    parser.add_argument('-e', action='store', dest='environment', choices=['tlm', 'oss'], help='either tlm or oss', required=True)
     parser.add_argument('-c', action='store', dest='component', choices=['zombie', 'vshield', 'netsvcs', 'other'], \
                         help='yaml configuration file to pull data from', required=True)
     args = parser.parse_args()
-    passwd=getpass.getpass("Password for {} on {}:".format(args.username,args.target))
+    passwd=getpass.getpass("\nPassword for {} on {}:".format(args.username,args.target))
     print "\nStarting configuration pass on {}. Output logged to ~/log/conductor.log\n".format(args.target)
 
+    exlock = Lock()
+    exlock.grab()
     vcsa_cursor = Connect(args.target,args.username,passwd)
 
     global_data = {}
@@ -60,23 +89,25 @@ if __name__=='__main__':
             esxl_data.append("{},{}".format(each['host'],each['datastores']))
     global_data['ESX'] = esx_data
             
-        
     vm_data = []
     vm_info = mob.poll_all_vms(vcsa_cursor.client)
     for each in vm_info:
         if isinstance(each, dict):
             try:
-                vm_data.append("{},{}".format(each['name'],each['ip']))
+                vm_data.append(each['ip'])
+                vm_data.append(each['name'])
             except:
                 pass
         else:
-            vm_data.append("{},{}".format(each['name'],each['ip']))
+            vm_data.append(each['ip'])
+            vm_data.append(each['name'])
     global_data['VM'] = vm_data
 
-    yaml_file = Parse(args.filename,args.component)
+    yaml_file = Parse(args.filename, root=args.environment, node=args.component)
     global_data['YAML'] = yaml_file
 
     to_add = Compare(global_data)
+
     vcsa_cursor.clone(vcsa_cursor.client,to_add)
-    
     vcsa_cursor.disconnect()
+    exlock.release()

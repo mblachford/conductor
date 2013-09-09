@@ -1,0 +1,3 @@
+logging:
+    destination: ~/.psphere/psphere.log
+    level: CRITICAL # DEBUG, INFO, etc

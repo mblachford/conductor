@@ -1,0 +1,296 @@
+tlm:
+  zombie:
+    - name: d3p4tlm-zmb-eng-pbrkr-a
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.21
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.2.80.2,10.2.80.3 
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4tlm-zmb-eng-pbrkr-b
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.22
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.2.80.2,10.2.80.3 
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4tlm-zmb-rmq-pod-a
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.33
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.2.80.2,10.2.80.3 
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4tlm-zmb-rmq-pod-b
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.34
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.2.80.2,10.2.80.3 
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4tlm-zmb-rzr-a
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.36
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.2.80.2,10.2.80.3 
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4tlm-zmb-rzr-b
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.36
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.2.80.2,10.2.80.3 
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4tlm-zmb-rzr-db
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.39
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.2.80.2,10.2.80.3 
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4tlm-mgmt-nw-dcdr
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.40
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.2.80.2,10.2.80.3 
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4tlm-zmb-pm-a
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.42
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.2.80.2,10.2.80.3 
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4tlm-zmb-pm-b
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.43
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.2.80.2,10.2.80.3 
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+  vcim:
+    - name: d3p4tlm-mgmt-vcimcp-a
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.131
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.8.28.83,10.8.28.83
+      memory: 2048
+      cpus: 2
+      cores: 1
+ 
+    - name: d3p4tlm-mgmt-vcimcp-b
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.132
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.8.28.83,10.8.28.83
+      memory: 8192
+      cpus: 2
+      cores: 2
+ 
+    - name: d3p4tlm-mgmt-vcimcp-c
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.133
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.8.28.83,10.8.28.83
+      memory: 8192
+      cpus: 2
+      cores: 2
+ 
+    - name: d3p4tlm-mgmt-vcimcp-d
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.134
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.8.28.83,10.8.28.83
+      memory: 8192
+      cpus: 2
+      cores: 2
+ 
+    - name: d3p4tlm-mgmt-vcimup-a
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.2.6
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.8.28.83,10.8.28.83
+      memory: 2048
+      cpus: 2
+      cores: 1
+ 
+    - name: d3p4tlm-mgmt-vcimup-b
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.2.7
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.8.28.83,10.8.28.83
+      memory: 2048
+      cpus: 2
+      cores: 1
+
+
+  netsvcs:
+
+  other:
+    - name: d3p4tlm-mgmt-testauto
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.11
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.2.80.2,10.2.80.3 
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4tlm-mgmt-centosrepo
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.12
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.2.80.2,10.2.80.3 
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4tlm-mgmt-puppet
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.3.13
+      netmask: 255.255.255.0
+      gateway: 10.8.3.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.2.80.2,10.2.80.3 
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+oss:
+  vcim:
+    - name: d3p4oss-mgmt-sdp-a
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 172.20.4.6
+      netmask: 255.255.255.128
+      gateway: 172.20.4.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.8.28.83,10.8.28.83
+      memory: 2048
+      cpus: 2
+      cores: 1
+ 
+    - name: d3p4oss-mgmt-sdp-b
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 172.20.4.7
+      netmask: 255.255.255.128
+      gateway: 172.20.4.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.8.28.83,10.8.28.83
+      memory: 2048
+      cpus: 2
+      cores: 1
+
+  netadmin:
+    - name: d3p4oss-mgmt-netsvc-a
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.28.81
+      netmask: 255.255.255.192
+      gateway: 10.8.28.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.8.28.81,10.8.28.83
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4oss-mgmt-netsvc-b
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.28.82
+      netmask: 255.255.255.192
+      gateway: 10.8.28.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.8.28.81,10.8.28.83
+      memory: 1024
+      cpus: 1
+      cores: 1
+    
+  other:
+    - name: d3p4oss-mgmt-linjump
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 172.20.4.3
+      netmask: 255.255.255.128
+      gateway: 172.20.4.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.8.28.81,10.8.28.83
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4oss-mgmt-winjump
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 172.20.4.2
+      netmask: 255.255.255.128
+      gateway: 172.20.4.1
+      domain: prod.vchs.vmw
+      dns_servers: 10.8.28.81,10.8.28.83
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+    - name: d3p4oss-mgmt-netadmin
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 10.8.28.108
+      netmask: 255.255.255.192
+      gateway: 10.8.28.64
+      domain: prod.vchs.vmw
+      dns_servers: 10.8.28.81,10.8.28.83
+      memory: 1024
+      cpus: 1
+      cores: 1

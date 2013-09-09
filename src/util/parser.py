@@ -4,17 +4,13 @@ from random import choice
 
 log = logging.getLogger(__name__)
 
-def parse(input,*args):
+def parse(input,root,node):
     ''' base yaml parser module '''
-    if len(args) > 0:
-        yaml_node = args[0]
-    else:
-        pass
     try:
         log.info("Parsing {} and building data tree".format(input))
         stream = open(input,'r')
         data = yaml.load(stream)
-        refined = data[yaml_node]    
+        refined = data[root][node]    
         return refined
     except Exception, e:
         log.info("Unable to parse {} and build the data tree".format(input))
@@ -47,24 +43,23 @@ def compare(input):
 
         log.info("Comparing provided manifest to already installed virtual machines for entry {}".format(_name))
 
-        for raw_data in vm_data:
-            if _name in raw_data and _ip in raw_data:
-                log.error("Found an already existing virtual machine with the name {} and ip address {}. Skipping installation".format(_name,_ip))
-                break
-            elif not _name in raw_data or not _ip in raw_data:
-                log.info("Unable to locate a VM in inventory with the name {} and an IP of {}. Safe to build. Generating payload for delivery".format(_name,_ip))
-                _build['vm_name'] = _name
-                _build['template'] = _template
-                _build['ip'] = _ip
-                _build['netmask'] = _netmask
-                _build['gateway'] = _gateway
-                _build['cores'] = _cores
-                _build['cpus'] = _cpus
-                _build['memory'] = _memory
-                _build['vm_name'] = _name
-                _build['esx_host'] = host
-                _build['datastore'] = datastore
-                _build['dns'] = _dns_srv
-                _build['domain'] = _domain
-        payload.append(_build)
+        if _name in vm_data:
+            log.error("Found an already existing virtual machine with the name {}. Skipping installation".format(_name))
+            pass
+        elif not _name in vm_data:
+            log.info("Unable to find a VM with the name {} in vCenter. Constructing paylod for provisioning".format(_name))
+            _build['vm_name'] = _name
+            _build['template'] = _template
+            _build['ip'] = _ip
+            _build['netmask'] = _netmask
+            _build['gateway'] = _gateway
+            _build['cores'] = _cores
+            _build['cpus'] = _cpus
+            _build['memory'] = _memory
+            _build['vm_name'] = _name
+            _build['esx_host'] = host
+            _build['datastore'] = datastore
+            _build['dns'] = _dns_srv
+            _build['domain'] = _domain
+            payload.append(_build)
     return payload

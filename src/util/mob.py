@@ -51,32 +51,3 @@ def poll_single_vm(cursor,vmname):
     except Exception, e:
         log.info("Polling for virtual machine object {} failed. Reason: {}".format(vmname,e))
 
-def clone_template(cursor,template_name,values):
-    ''' clone our souce template to a virutal machine with the 
-        provided specifications:
-          VirtualMachineConfigSpec - changes to virtual hardware
-          CustomizationSpec - guest os customization
-          VirtualMachineRelocateSpec - cloned VM destination information
-    '''
-    vm_config_spec = client.create("VirtualMachineConfigSpec")
-
-    vm_clone_spec = client.create("VirtualMachineCloneSpec")
-    vm_clone_spec.powerOn = True
-    vm_clone_spec.template = False
-    vm_clone_spec.location = vm_reloc_spec
-
-    vm_reloc_spec = client.create("VirtualMachineRelocateSpec")
-    vm_reloc_spec.datastore = vm.datastore
-    vm_reloc_spec.pool = vm.resourcePool
-    vm_reloc_spec.host = host_system
-
-    vm = cursor.VirtualMachine.get(client, name=template_name)
-    name = options.vmname
-    folder = vm.parent.parent.vmFolder # Datacenter folder
-
-    try:
-        cursor.CloneVM_Task(folder = folder, name = name, spec=vm_clone_spec)
-    except VimFault, e:
-        print("Failed to clone %s: " % e)
-        sys.exit()
-    client.logout()

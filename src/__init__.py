@@ -10,4 +10,4 @@ logging.basicConfig(filename=logfile,
                     datefmt='%H:%M:%S',
                     level=logging.INFO)
 
-#logging.getLogger('suds.client').setLevel(logging.DEBUG)
+logging.getLogger('psphere').setLevel(logging.CRITICAL)
