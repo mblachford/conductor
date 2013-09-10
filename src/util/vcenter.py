@@ -3,6 +3,7 @@ import sys
 import time
 import logging
 import psphere.client as vcsa_client
+from string import Template
 from psphere.managedobjects import VirtualMachine
 from psphere.managedobjects import HostSystem
 from psphere.managedobjects import ResourcePool
@@ -95,7 +96,7 @@ class Transport():
         nic_config.adapter = ip_spec
         return nic_config
 
-    def _vm_custom_spec(self,cursor,adapter_spec, **kwargs):
+    def _vm_custom_spec(self,cursor,adapter_spec,**kwargs):
         custom_spec = cursor.create("CustomizationSpec")
         host_name = cursor.create("CustomizationFixedName")
         host_name.name = kwargs['name']
@@ -105,24 +106,9 @@ class Transport():
 
         if 'windows' in kwargs['template'].lower():
             log.info("Calling windows customization specification")
-            identity_spec = cursor.create("CustomizationSysprep")
-            id_spec = cursor.create("CustomizationIdentification")
-            id_spec.domainAdmin = None
-            id_spec.domainAdminPassword = None
-            id_spec.joinDomain = None
-            id_spec.joinWorkgroup = 'WORKGROUP'
-            data_spec = cursor.create("CustomizationUserData")
-            data_spec.fullName = "VMware Hybrid Cloud Services"
-            data_spec.orgName = "vCHS Operations"
-            data_spec.productId = None
-            data_spec.computerName = host_name
-            gui_unattended_spec = cursor.create("CustomizationGuiUnattended")
-            gui_unattended_spec.autoLogon = True
-            gui_unattended_spec.autoLogonCount = 1
-            gui_unattended_spec.timeZone = 85
-            identity_spec.guiUnattended = gui_unattended_spec
-            identity_spec.identification = id_spec
-            identity_spec.userData = data_spec
+            self._gen_sysprep()
+            identity_spec = cursor.create("CustomizationSysprepText")
+            identity_spec.value = sysprep
         else:
             log.info("Calling Linux customization specification")
             identity_spec = cursor.create("CustomizationLinuxPrep")
@@ -152,6 +138,21 @@ class Transport():
         clone_spec.snapshot = None
         clone_spec.template = False
         return clone_spec
+
+    def _gen_sysprep(self,**kwargs):
+        ''' modify the sysprep file '''
+        raw_file = open('/home/masonb/conductor/src/util/sysprep.xml').read()
+        mod = Template(raw_file)  
+        sysprep = mod.substitute(name = kwargs['vm_name']
+                                 owner = 'VMware Hybrid Cloud Services',
+                                 org = 'vCHS Operations',
+                                 gateway = kwargs['gateway'],
+                                 ip = kwargs['ip'],
+                                 mask = kwargs['netmask'],
+                                 dns1 = kwargs['dns'].split(',')[0],
+                                 dns2 = kwargs['dns'].split(',')[1],
+                                 passwd = 'm0n3yb0vin3',)
+        return sysprep
 
     def wait_for_task(self,task):
         if isinstance(task, Task):
