@@ -59,7 +59,8 @@ class Transport():
             _adapter_spec = self._vm_adapter_spec(cursor, _ip_spec)
             _custom_spec = self._vm_custom_spec(cursor, _adapter_spec,
                                                          domain = data['domain'],
-                                                         name = data['vm_name'])
+                                                         name = data['vm_name'],
+                                                         dns = data['dns'])
             _relo_spec = self._vm_relo_spec(cursor, template.datastore, esxhost, pool)
             _clone_spec = self._vm_clone_spec(cursor, _relo_spec, _config_spec, _custom_spec)
 
@@ -95,14 +96,18 @@ class Transport():
 
     def _vm_custom_spec(self,cursor,adapter_spec, **kwargs):
         custom_spec = cursor.create("CustomizationSpec")
+        global_spec = cursor.create("CustomizationGlobalIPSettings")
         identity_spec = cursor.create("CustomizationLinuxPrep")
         host_name = cursor.create("CustomizationFixedName")
         host_name.name = kwargs['name']
         identity_spec.domain = kwargs['domain']
         identity_spec.hostName = host_name
         identity_spec.hwClockUTC = True
+        global_spec.dnsServerList = kwargs['dns']
+        global_spec.dnsSuffixList = kwargs['domain']
         custom_spec.nicSettingMap = adapter_spec
         custom_spec.identity = identity_spec
+        custom_spec.globalIPSettings = global_spec
         return custom_spec
 
     def _vm_relo_spec(self,cursor,disk,esxhost,pool):
@@ -118,7 +123,7 @@ class Transport():
         clone_spec.config = config_spec
         clone_spec.customization = custom_spec
         clone_spec.location = relo_spec
-        clone_spec.powerOn = True
+        clone_spec.powerOn = False
         clone_spec.snapshot = None
         clone_spec.template = False
         return clone_spec

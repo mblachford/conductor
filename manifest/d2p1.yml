@@ -70,13 +70,13 @@ tlm:
 
 oss:
   other:
-    - name: testoss
-      template: mason_template
-      ip: 10.6.28.102
+    - name: d3p4oss-mgmt-linjump
+      template: Centos6.4-2013-08-24_no_prompt
+      ip: 172.20.4.3
       netmask: 255.255.255.128
-      gateway: 10.6.28.65
+      gateway: 172.20.4.1
       domain: prod.vchs.vmw
-      dns_servers: 4.2.2.2 
+      dns_servers: 10.8.28.81 10.8.28.83
       memory: 1024
-      cpus: 2
+      cpus: 1
       cores: 1

@@ -13,7 +13,7 @@ def parse(input,root,node):
         refined = data[root][node]    
         return refined
     except Exception, e:
-        log.info("Unable to parse {} and build the data tree".format(input))
+        log.info("Unable to parse {} and build the data tree. Reason: {}".format(input,e))
 
 def compare(input):
     '''this is where we compare and build mapping values to put back into vCenter'''
