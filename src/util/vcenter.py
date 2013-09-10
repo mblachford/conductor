@@ -104,21 +104,27 @@ class Transport():
         ip_spec.dnsSuffixList = kwargs['domain']
 
         if 'windows' in kwargs['template'].lower():
+            log.info("Calling windows customization specification")
             identity_spec = cursor.create("CustomizationSysprep")
+            id_spec = cursor.create("CustomizationIdentification")
+            id_spec.domainAdmin = None
+            id_spec.domainAdminPassword = None
+            id_spec.joinDomain = None
+            id_spec.joinWorkgroup = 'WORKGROUP'
             data_spec = cursor.create("CustomizationUserData")
-            gui_unattended_spec = cursor.create("CustomizationGuiUnattended")
-            identity_spec.guiUnattended = gui_unattended_spec
-            identity_spec.identification = None
-            identity_spec.userData = data
-            data_spec.computerName = host_name
-            data_spec.fullName = 'VMware Hybrid Cloud Services'
-            data_spec.orgName = 'vCHS Operations'
+            data_spec.fullName = "VMware Hybrid Cloud Services"
+            data_spec.orgName = "vCHS Operations"
             data_spec.productId = None
+            data_spec.computerName = host_name
+            gui_unattended_spec = cursor.create("CustomizationGuiUnattended")
             gui_unattended_spec.autoLogon = True
             gui_unattended_spec.autoLogonCount = 1
-            gui_unattended_spec.timeZone = 085
-            ip_spec = None
+            gui_unattended_spec.timeZone = 85
+            identity_spec.guiUnattended = gui_unattended_spec
+            identity_spec.identification = id_spec
+            identity_spec.userData = data_spec
         else:
+            log.info("Calling Linux customization specification")
             identity_spec = cursor.create("CustomizationLinuxPrep")
             identity_spec.domain = kwargs['domain']
             identity_spec.hostName = host_name
