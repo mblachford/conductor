@@ -58,6 +58,7 @@ class Transport():
                                                netmask = data['netmask'])
             _adapter_spec = self._vm_adapter_spec(cursor, _ip_spec)
             _custom_spec = self._vm_custom_spec(cursor, _adapter_spec,
+                                                         template = data['template'],
                                                          domain = data['domain'],
                                                          name = data['vm_name'],
                                                          dns = data['dns'])
@@ -96,18 +97,36 @@ class Transport():
 
     def _vm_custom_spec(self,cursor,adapter_spec, **kwargs):
         custom_spec = cursor.create("CustomizationSpec")
-        global_spec = cursor.create("CustomizationGlobalIPSettings")
-        identity_spec = cursor.create("CustomizationLinuxPrep")
         host_name = cursor.create("CustomizationFixedName")
         host_name.name = kwargs['name']
-        identity_spec.domain = kwargs['domain']
-        identity_spec.hostName = host_name
-        identity_spec.hwClockUTC = True
-        global_spec.dnsServerList = kwargs['dns']
-        global_spec.dnsSuffixList = kwargs['domain']
-        custom_spec.nicSettingMap = adapter_spec
+        ip_spec = cursor.create("CustomizationGlobalIPSettings")
+        ip_spec.dnsServerList = kwargs['dns']
+        ip_spec.dnsSuffixList = kwargs['domain']
+
+        if 'windows' in kwargs['template'].lower():
+            identity_spec = cursor.create("CustomizationSysprep")
+            data_spec = cursor.create("CustomizationUserData")
+            gui_unattended_spec = cursor.create("CustomizationGuiUnattended")
+            identity_spec.guiUnattended = gui_unattended_spec
+            identity_spec.identification = None
+            identity_spec.userData = data
+            data_spec.computerName = host_name
+            data_spec.fullName = 'VMware Hybrid Cloud Services'
+            data_spec.orgName = 'vCHS Operations'
+            data_spec.productId = None
+            gui_unattended_spec.autoLogon = True
+            gui_unattended_spec.autoLogonCount = 1
+            gui_unattended_spec.timeZone = 085
+            ip_spec = None
+        else:
+            identity_spec = cursor.create("CustomizationLinuxPrep")
+            identity_spec.domain = kwargs['domain']
+            identity_spec.hostName = host_name
+            identity_spec.hwClockUTC = True
+
+        custom_spec.globalIPSettings = ip_spec
         custom_spec.identity = identity_spec
-        custom_spec.globalIPSettings = global_spec
+        custom_spec.nicSettingMap = adapter_spec
         return custom_spec
 
     def _vm_relo_spec(self,cursor,disk,esxhost,pool):
