@@ -62,6 +62,9 @@ class Transport():
                                                          template = data['template'],
                                                          domain = data['domain'],
                                                          name = data['vm_name'],
+                                                         ip = data['ip'],
+                                                         gateway = data['gateway'],
+                                                         netmask = data['netmask'],
                                                          dns = data['dns'])
             _relo_spec = self._vm_relo_spec(cursor, template.datastore, esxhost, pool)
             _clone_spec = self._vm_clone_spec(cursor, _relo_spec, _config_spec, _custom_spec)
@@ -106,7 +109,7 @@ class Transport():
 
         if 'windows' in kwargs['template'].lower():
             log.info("Calling windows customization specification")
-            self._gen_sysprep()
+            sysprep = self._gen_sysprep(**kwargs)
             identity_spec = cursor.create("CustomizationSysprepText")
             identity_spec.value = sysprep
         else:
@@ -141,17 +144,19 @@ class Transport():
 
     def _gen_sysprep(self,**kwargs):
         ''' modify the sysprep file '''
-        raw_file = open('/home/masonb/conductor/src/util/sysprep.xml').read()
+        dir = os.path.abspath(os.path.dirname(__file__))
+        raw_file = open('{}/.unattend.xml'.format(dir)).read()
         mod = Template(raw_file)  
-        sysprep = mod.substitute(name = kwargs['vm_name']
-                                 owner = 'VMware Hybrid Cloud Services',
-                                 org = 'vCHS Operations',
+        if len(kwargs['name']) > 15:
+            hname = kwargs['name'][0:15]
+        else: 
+            hname = kwargs['name']
+        sysprep = mod.substitute(name = hname,
                                  gateway = kwargs['gateway'],
                                  ip = kwargs['ip'],
-                                 mask = kwargs['netmask'],
+                                 cidr = '26',
                                  dns1 = kwargs['dns'].split(',')[0],
-                                 dns2 = kwargs['dns'].split(',')[1],
-                                 passwd = 'm0n3yb0vin3',)
+                                 dns2 = kwargs['dns'].split(',')[1])
         return sysprep
 
     def wait_for_task(self,task):
