@@ -55,7 +55,8 @@ def get_cluster_names(cursor,cname):
     ''' need to find all the cluster names '''
     try:
         cluster = vcsa_objects.ClusterComputeResource.get(cursor, name=cname)
-        print cluster.parent.parent.name
+        print dir(cluster.datastore)
+        print type(cluster.datastore)
     except ObjectNotFoundError, e:
         print "Error occured: {}".format(e)
         sys.exit(0)

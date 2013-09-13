@@ -68,9 +68,8 @@ if __name__=='__main__':
     parser.add_argument('-c', action='store', dest='component', choices=['vcim','zombie','vshield','netsvcs','other'], \
                         help='yaml configuration file to pull data from', required=True)
     args = parser.parse_args()
-    #passwd=getpass.getpass("\nPassword for {} on {}:".format(args.username,args.target))
+    passwd=getpass.getpass("\nPassword for {} on {}:".format(args.username,args.target))
     print "\nStarting configuration pass on {}. Output logged to ~/log/conductor.log\n".format(args.target)
-    passwd = 'm0n3yb0vin3'
 
     exlock = Lock()
     exlock.grab()

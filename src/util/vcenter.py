@@ -2,8 +2,9 @@ import os
 import sys
 import time
 import logging
-import psphere.client as vcsa_client
 from string import Template
+from random import choice
+import psphere.client as vcsa_client
 from psphere.managedobjects import ClusterComputeResource
 from psphere.managedobjects import VirtualMachine
 from psphere.managedobjects import HostSystem
@@ -43,13 +44,14 @@ class Transport():
    
         while payload:
             data = payload.pop(0)
-            print data
             try:
                 cluster = ClusterComputeResource.get(cursor, name=data['cluster'])
             except Exception, e:
                 log.error("Unable to locate a cluster resource witht the name {}. Omitting build".format(data['cluster']))
             else:
                 pool = cluster.resourcePool
+                esxhost = choice(cluster.host)
+                datastore = choice(cluster.datastore)
                 log.info("Cloning virtual machine named {} into cluster {} from template {}".format(data['vm_name'],data['cluster'],data['template']))
                 template = VirtualMachine.get(cursor, name=data['template'])
                 folder = cluster.parent.parent.vmFolder
@@ -72,7 +74,7 @@ class Transport():
                                                     gateway = data['gateway'],
                                                     netmask = data['netmask'],
                                                     dns = data['dns'])
-                _relo_spec = self._vm_relo_spec(cursor, template.datastore, pool)
+                _relo_spec = self._vm_relo_spec(cursor,esxhost,datastore,pool)
                 _clone_spec = self._vm_clone_spec(cursor, _relo_spec, _config_spec, _custom_spec)
 
                 try:
@@ -131,8 +133,9 @@ class Transport():
         custom_spec.nicSettingMap = adapter_spec
         return custom_spec
 
-    def _vm_relo_spec(self,cursor,disk,pool):
+    def _vm_relo_spec(self,cursor,host,disk,pool):
         relo_spec = cursor.create("VirtualMachineRelocateSpec")
+        relo_spec.host = host
         relo_spec.datastore = disk
         relo_spec.transform = "sparse"
         relo_spec.pool = pool
@@ -143,7 +146,7 @@ class Transport():
         clone_spec.config = config_spec
         clone_spec.customization = custom_spec
         clone_spec.location = relo_spec
-        clone_spec.powerOn = False
+        clone_spec.powerOn = True
         clone_spec.snapshot = None
         clone_spec.template = False
         return clone_spec
