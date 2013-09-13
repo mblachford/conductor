@@ -40,6 +40,7 @@ def compare(input):
         _memory = in_data['memory']
         _domain = in_data['domain']
         _dns_srv = in_data['dns_servers']
+        _cluster = in_data['cluster']
 
         log.info("Comparing provided manifest to already installed virtual machines for entry {}".format(_name))
 
@@ -61,5 +62,6 @@ def compare(input):
             _build['datastore'] = datastore
             _build['dns'] = _dns_srv
             _build['domain'] = _domain
+            _build['cluster'] = _cluster
             payload.append(_build)
     return payload

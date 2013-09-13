@@ -4,6 +4,7 @@ import time
 import logging
 import psphere.client as vcsa_client
 from string import Template
+from psphere.managedobjects import ClusterComputeResource
 from psphere.managedobjects import VirtualMachine
 from psphere.managedobjects import HostSystem
 from psphere.managedobjects import ResourcePool
@@ -42,37 +43,43 @@ class Transport():
    
         while payload:
             data = payload.pop(0)
-            log.info("Building virtual machine named {} from template {}".format(data['vm_name'],data['template']))
-            template = VirtualMachine.get(cursor, name=data['template'])
-            folder = template.parent.parent.parent.vmFolder
-            esxhost = HostSystem.get(cursor, name=data['esx_host'])
-            pool = esxhost.parent.resourcePool
-
-            _config_spec = self._vm_config_spec(cursor, memory = data['memory'], 
-                                                        cpus = data['cpus'], 
-                                                        cores = data['cores'],
-                                                        name = data['vm_name'])
-            _ip_spec = self._vm_ip_spec(cursor, domain = data['domain'],
-                                                dns = data['dns'],
-                                                gateway = data['gateway'],
-                                                ip = data['ip'],
-                                               netmask = data['netmask'])
-            _adapter_spec = self._vm_adapter_spec(cursor, _ip_spec)
-            _custom_spec = self._vm_custom_spec(cursor, _adapter_spec,
-                                                         template = data['template'],
-                                                         domain = data['domain'],
-                                                         name = data['vm_name'],
-                                                         ip = data['ip'],
-                                                         gateway = data['gateway'],
-                                                         netmask = data['netmask'],
-                                                         dns = data['dns'])
-            _relo_spec = self._vm_relo_spec(cursor, template.datastore, esxhost, pool)
-            _clone_spec = self._vm_clone_spec(cursor, _relo_spec, _config_spec, _custom_spec)
-
+            print data
             try:
-                self.wait_for_task(template.CloneVM_Task(folder = folder, name = data['vm_name'], spec=_clone_spec))
-            except VimFault, e:
-                print e
+                cluster = ClusterComputeResource.get(cursor, name=data['cluster'])
+            except Exception, e:
+                log.error("Unable to locate a cluster resource witht the name {}. Omitting build".format(data['cluster']))
+            else:
+                pool = cluster.resourcePool
+                log.info("Cloning virtual machine named {} into cluster {} from template {}".format(data['vm_name'],data['cluster'],data['template']))
+                template = VirtualMachine.get(cursor, name=data['template'])
+                folder = cluster.parent.parent.vmFolder
+
+                _config_spec = self._vm_config_spec(cursor, memory = data['memory'], 
+                                                    cpus = data['cpus'], 
+                                                    cores = data['cores'],
+                                                    name = data['vm_name'])
+                _ip_spec = self._vm_ip_spec(cursor, domain = data['domain'],
+                                            dns = data['dns'],
+                                            gateway = data['gateway'],
+                                            ip = data['ip'],
+                                            netmask = data['netmask'])
+                _adapter_spec = self._vm_adapter_spec(cursor, _ip_spec)
+                _custom_spec = self._vm_custom_spec(cursor, _adapter_spec,
+                                                    template = data['template'],
+                                                    domain = data['domain'],
+                                                    name = data['vm_name'],
+                                                    ip = data['ip'],
+                                                    gateway = data['gateway'],
+                                                    netmask = data['netmask'],
+                                                    dns = data['dns'])
+                _relo_spec = self._vm_relo_spec(cursor, template.datastore, pool)
+                _clone_spec = self._vm_clone_spec(cursor, _relo_spec, _config_spec, _custom_spec)
+
+                try:
+                    #self.wait_for_task(template.CloneVM_Task(folder = folder, name = data['vm_name'], spec=_clone_spec))
+                    template.CloneVM_Task(folder = folder, name = data['vm_name'], spec=_clone_spec)
+                except VimFault, e:
+                    print e
 
     def _vm_config_spec(self,cursor,**kwargs):
         config_spec = cursor.create("VirtualMachineConfigSpec")
@@ -124,10 +131,9 @@ class Transport():
         custom_spec.nicSettingMap = adapter_spec
         return custom_spec
 
-    def _vm_relo_spec(self,cursor,disk,esxhost,pool):
+    def _vm_relo_spec(self,cursor,disk,pool):
         relo_spec = cursor.create("VirtualMachineRelocateSpec")
         relo_spec.datastore = disk
-        relo_spec.host = esxhost
         relo_spec.transform = "sparse"
         relo_spec.pool = pool
         return relo_spec

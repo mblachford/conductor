@@ -51,3 +51,11 @@ def poll_single_vm(cursor,vmname):
     except Exception, e:
         log.info("Polling for virtual machine object {} failed. Reason: {}".format(vmname,e))
 
+def get_cluster_names(cursor,cname):
+    ''' need to find all the cluster names '''
+    try:
+        cluster = vcsa_objects.ClusterComputeResource.get(cursor, name=cname)
+        print cluster.parent.parent.name
+    except ObjectNotFoundError, e:
+        print "Error occured: {}".format(e)
+        sys.exit(0)
