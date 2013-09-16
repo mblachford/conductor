@@ -1,11 +1,11 @@
-env1:
-  subenv:
+tlm:
+  netsvcs:
     - name: pxe-a
       template: Centos6.4
       cluster: cluster02
-      ip: 10.8.16.10
+      ip: x.x.x.x
       netmask: 255.255.252.0
-      gateway: 10.8.16.1
+      gateway: x.x.x.x
       domain: example.com
       dns_servers: 8.8.8.8,4.2.2.2
       memory: 1024
@@ -15,9 +15,9 @@ env1:
     - name: pxe-b
       template: Centos6.4
       cluster: cluster02
-      ip: 10.8.16.11
+      ip: x.x.x.x
       netmask: 255.255.252.0
-      gateway: 10.8.16.1
+      gateway: x.x.x.x
       domain: example.com
       dns_servers: 8.8.8.8,4.2.2.2
       memory: 1024
@@ -28,9 +28,9 @@ env1:
     - name: test
       template: Windows2k8
       cluster: cluster01
-      ip: X.X.X.X
+      ip: x.x.x.x
       netmask: 255.255.255.0
-      gateway: X.X.X.X
+      gateway: x.x.x.x
       domain: 
       dns_servers: 8.8.8.8,4.2.2.2
       memory: 1024
@@ -52,9 +52,23 @@ env1:
     - name: puppet-server
       template: Centos6.4
       cluster: d3p4tlm
-      ip: 10.8.3.13
+      ip: x.x.x.x
       netmask: 255.255.255.0
-      gateway: 10.8.3.1
+      gateway: x.x.x.x
+      domain: example.com
+      dns_servers: 8.8.8.8,4.2.2.2
+      memory: 1024
+      cpus: 1
+      cores: 1
+
+oss
+  other:
+    - name: test-vm-a
+      template: DebianDefault
+      cluster: cluster8
+      ip: x.x.x.x
+      netmask: 255.255.252.0
+      gateway: x.x.x.x
       domain: example.com
       dns_servers: 8.8.8.8,4.2.2.2
       memory: 1024
