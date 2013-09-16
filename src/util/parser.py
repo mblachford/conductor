@@ -22,10 +22,6 @@ def compare(input):
     vm_data = input['VM']
     esx_data = input['ESX']
 
-    phys = choice(esx_data).split(',')
-    host = phys.pop(0)
-    datastore = choice(phys)
-
     payload = []
     while yaml_data:
         _build = {}
@@ -58,8 +54,6 @@ def compare(input):
             _build['cpus'] = _cpus
             _build['memory'] = _memory
             _build['vm_name'] = _name
-            _build['esx_host'] = host
-            _build['datastore'] = datastore
             _build['dns'] = _dns_srv
             _build['domain'] = _domain
             _build['cluster'] = _cluster

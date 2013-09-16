@@ -105,9 +105,7 @@ if __name__=='__main__':
 
     yaml_file = Parse(args.filename, root=args.environment, node=args.component)
     global_data['YAML'] = yaml_file
-
     to_add = Compare(global_data)
-
     vcsa_cursor.clone(vcsa_cursor.client,to_add)
     vcsa_cursor.disconnect()
     exlock.release()

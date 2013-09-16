@@ -11,14 +11,6 @@ def acquire_lock():
     try:
         frm = inspect.stack()[1]
         mod = inspect.getmodule(frm[0])
-        #lock = lockfile.Filelock(
         print mod.__name__
     except Exception, e:
         print "error: {}".format(e)
-    
-
-
-
-
-#print '[%s] %s' % (mod.__name__, msg)
-    

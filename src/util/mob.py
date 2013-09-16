@@ -1,6 +1,7 @@
 import os
 import sys
 import logging
+import inspect
 import psphere.managedobjects as vcsa_objects
 
 log = logging.getLogger(__name__)
@@ -42,21 +43,10 @@ def poll_all_vms(cursor):
     except Exception, e:
         log.info("Polling VM objects from vCenter failed. Reason: {}".format(e))
 
-def poll_single_vm(cursor,vmname):
-    ''' mine our connection on the target instance for objects'''
-    try:
-        log.info("Attempting to poll vCenter for virtual machine object: {}".format(vmname))
-        data = vcsa_objects.VirtualMachine.get(cursor, name='{}'.format(vmname))
-        return data
-    except Exception, e:
-        log.info("Polling for virtual machine object {} failed. Reason: {}".format(vmname,e))
-
 def get_cluster_names(cursor,cname):
     ''' need to find all the cluster names '''
     try:
         cluster = vcsa_objects.ClusterComputeResource.get(cursor, name=cname)
-        print dir(cluster.datastore)
-        print type(cluster.datastore)
     except ObjectNotFoundError, e:
-        print "Error occured: {}".format(e)
+        log.info("Unable to find cluster. Reason: {}".format(e))
         sys.exit(0)
