@@ -19,7 +19,7 @@ class Transport():
     def __init__(self, target, username, password):
         self.client = self.connect(target, username, password)
 
-    def connect(self,target,username,password):
+    def connect(self,target,username,password,wsdl_location='remote'):
         ''' instantiate a connection to target instance '''
         try:
             log.info("Attempting to connect to vCenter {}".format(target))
@@ -56,24 +56,20 @@ class Transport():
                 template = VirtualMachine.get(cursor, name=data['template'])
                 folder = cluster.parent.parent.vmFolder
 
-                _config_spec = self._vm_config_spec(cursor, memory = data['memory'], 
-                                                    cpus = data['cpus'], 
-                                                    cores = data['cores'],
-                                                    name = data['vm_name'])
                 _ip_spec = self._vm_ip_spec(cursor, domain = data['domain'],
                                             dns = data['dns'],
                                             gateway = data['gateway'],
                                             ip = data['ip'],
                                             netmask = data['netmask'])
-                _adapter_spec = self._vm_adapter_spec(cursor, _ip_spec)
-                _custom_spec = self._vm_custom_spec(cursor, _adapter_spec,
-                                                    template = data['template'],
-                                                    domain = data['domain'],
-                                                    name = data['vm_name'],
-                                                    ip = data['ip'],
-                                                    gateway = data['gateway'],
-                                                    netmask = data['netmask'],
-                                                    dns = data['dns'])
+                _adapter_spec = self._vm_adapter_spec(cursor,_ip_spec)
+                _net_spec = self._vm_net_spec(cursor,cluster.network, vlan = data['vlan'])
+                _custom_spec = self._vm_custom_spec(cursor, _adapter_spec, template = data['template'],
+                                                    domain = data['domain'], name = data['vm_name'],
+                                                    ip = data['ip'], gateway = data['gateway'],
+                                                    netmask = data['netmask'], dns = data['dns'])
+                _config_spec = self._vm_config_spec(cursor, _net_spec, memory = data['memory'], 
+                                                    cpus = data['cpus'], cores = data['cores'],
+                                                    name = data['vm_name'])
                 _relo_spec = self._vm_relo_spec(cursor,esxhost,datastore,pool)
                 _clone_spec = self._vm_clone_spec(cursor, _relo_spec, _config_spec, _custom_spec)
 
@@ -83,11 +79,12 @@ class Transport():
                 except VimFault, e:
                     print e
 
-    def _vm_config_spec(self,cursor,**kwargs):
+    def _vm_config_spec(self,cursor,net_spec,**kwargs):
         config_spec = cursor.create("VirtualMachineConfigSpec")
         config_spec.memoryMB = kwargs['memory']
         config_spec.numCPUs = kwargs['cpus']
         config_spec.name = kwargs['name']
+        config_spec.deviceChange = net_spec
         #config_spec.numCoresPerSocket = kwargs['cores']
         return config_spec
 
@@ -102,6 +99,45 @@ class Transport():
         ip_spec.subnetMask = kwargs['netmask']
         ip_spec.netBIOS = None
         return ip_spec
+
+    def _vm_net_spec(self,cursor,netinfo,**kwargs):
+        for network in netinfo:
+            if not network.name == kwargs["vlan"]:
+                pass
+            elif network.name == kwargs["vlan"]:
+                log.info("Customizing VM network configuration for vlan {}.".format(kwargs['vlan']))
+                net = network
+            else:
+                log.error("Unable to find the network named {}. Proceeding.".format(kwargs['vlan']))
+                net = None
+
+
+        ds_conn = cursor.create("DistributedVirtualSwitchPortConnection")
+        ds_conn.portgroupKey = net.key
+        ds_conn.switchUuid = "{}".format(net.config.distributedVirtualSwitch.uuid)
+
+        backing = cursor.create("VirtualEthernetCardDistributedVirtualPortBackingInfo")
+        backing.port = ds_conn
+
+        connect_info = cursor.create("VirtualDeviceConnectInfo")
+        connect_info.allowGuestControl = True
+        connect_info.connected = True
+        connect_info.startConnected = True
+
+        nic = cursor.create("VirtualVmxnet3") 
+        nic.backing = backing
+        nic.key = 4000
+        nic.unitNumber = 0
+        nic.addressType = "generated"
+        nic.connectable = connect_info
+
+        net_spec = cursor.create("VirtualDeviceConfigSpec")
+        net_spec.device = nic
+        net_spec.fileOperation = None
+        operation = cursor.create("VirtualDeviceConfigSpecOperation")
+        net_spec.operation = (operation.add)
+
+        return net_spec
 
     def _vm_adapter_spec(self,cursor,ip_spec):
         nic_config = cursor.create("CustomizationAdapterMapping")
