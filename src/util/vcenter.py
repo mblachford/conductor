@@ -84,7 +84,10 @@ class Transport():
         config_spec.memoryMB = kwargs['memory']
         config_spec.numCPUs = kwargs['cpus']
         config_spec.name = kwargs['name']
-        config_spec.deviceChange = net_spec
+        if not net_spec == None:
+            config_spec.deviceChange = net_spec
+        else:
+            pass
         #config_spec.numCoresPerSocket = kwargs['cores']
         return config_spec
 
@@ -102,42 +105,42 @@ class Transport():
 
     def _vm_net_spec(self,cursor,netinfo,**kwargs):
         for network in netinfo:
-            if not network.name == kwargs["vlan"]:
-                pass
-            elif network.name == kwargs["vlan"]:
+            if network.name == kwargs["vlan"]:
                 log.info("Customizing VM network configuration for vlan {}.".format(kwargs['vlan']))
                 net = network
+                ds_conn = cursor.create("DistributedVirtualSwitchPortConnection")
+                ds_conn.portgroupKey = net.key
+                ds_conn.switchUuid = "{}".format(net.config.distributedVirtualSwitch.uuid)
+
+                backing = cursor.create("VirtualEthernetCardDistributedVirtualPortBackingInfo")
+                backing.port = ds_conn
+
+                connect_info = cursor.create("VirtualDeviceConnectInfo")
+                connect_info.allowGuestControl = True
+                connect_info.connected = True
+                connect_info.startConnected = True
+
+                nic = cursor.create("VirtualVmxnet3") 
+                nic.backing = backing
+                nic.key = 4000
+                nic.unitNumber = 0
+                nic.addressType = "generated"
+                nic.connectable = connect_info
+
+                net_spec = cursor.create("VirtualDeviceConfigSpec")
+                net_spec.device = nic
+                net_spec.fileOperation = None
+                operation = cursor.create("VirtualDeviceConfigSpecOperation")
+                net_spec.operation = (operation.add)
+
+                return net_spec
             else:
-                log.error("Unable to find the network named {}. Proceeding.".format(kwargs['vlan']))
-                net = None
+                pass
 
-
-        ds_conn = cursor.create("DistributedVirtualSwitchPortConnection")
-        ds_conn.portgroupKey = net.key
-        ds_conn.switchUuid = "{}".format(net.config.distributedVirtualSwitch.uuid)
-
-        backing = cursor.create("VirtualEthernetCardDistributedVirtualPortBackingInfo")
-        backing.port = ds_conn
-
-        connect_info = cursor.create("VirtualDeviceConnectInfo")
-        connect_info.allowGuestControl = True
-        connect_info.connected = True
-        connect_info.startConnected = True
-
-        nic = cursor.create("VirtualVmxnet3") 
-        nic.backing = backing
-        nic.key = 4000
-        nic.unitNumber = 0
-        nic.addressType = "generated"
-        nic.connectable = connect_info
-
-        net_spec = cursor.create("VirtualDeviceConfigSpec")
-        net_spec.device = nic
-        net_spec.fileOperation = None
-        operation = cursor.create("VirtualDeviceConfigSpecOperation")
-        net_spec.operation = (operation.add)
-
+        log.error("Unable to find the network named {}. Continuing with out formal network specifciation".format(kwargs['vlan']))
+        net_spec = None
         return net_spec
+
 
     def _vm_adapter_spec(self,cursor,ip_spec):
         nic_config = cursor.create("CustomizationAdapterMapping")
